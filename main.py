@@ -4,12 +4,7 @@ from string import ascii_letters, digits, punctuation
 length = int(input("Enter password length: "))
 number_of_passwords = int(input("Enter the number of passwords: "))
 special_symbols = input("Special characters required? (+/-): ")
-mode = input("Display passwords on screen (-) or save to file (+)? (+/-): ")
-
-if mode == "+":
-    print("Passwords saved to file passwords.txt")
-    with open("passwords.txt", "w", encoding="utf-8") as file:
-        file.write("Generated passwords:\n")
+mode = input("Display passwords on screen (-) or save to file (+)? (+/-): ") 
 
 for _ in range(number_of_passwords):
     if special_symbols == "+":
@@ -17,7 +12,13 @@ for _ in range(number_of_passwords):
     else:
         characters = ascii_letters + digits
     password = ''.join(choice(characters) for _ in range(length))
+
     if mode == "+":
+        print("Passwords saved to file passwords.txt")
+
+        with open("passwords.txt", "w", encoding="utf-8") as file:
+           file.write("Generated passwords:\n")
+
         with open("passwords.txt", "a", encoding="utf-8") as file:
             file.write(f"{password}\n")
     else:
