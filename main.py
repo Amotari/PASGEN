@@ -1,7 +1,7 @@
 from random import choice
 from string import ascii_letters, digits, punctuation
 
-print("Attention! The file passwords_PASGEN is rewritten every time you choose to save to file.")
+print("Attention! The file \"passwords_PASGEN.txt\" is rewritten every time you choose to save to file.")
 
 length = int(input("Enter password length: "))
 number_of_passwords = int(input("Enter the number of passwords: "))
@@ -9,7 +9,7 @@ special_symbols = input("Special characters required? (+/-): ")
 mode = input("Display passwords on screen (+) or save to file (-)? (+/-): ") 
 
 if mode == "-":
-    print("Passwords saved to file passwords_PASGEN.txt")
+    print("Passwords saved to file \"passwords_PASGEN.txt\"")
 
     with open("passwords_PASGEN.txt", "w", encoding="utf-8") as file:
            file.write("Generated passwords:\n")
